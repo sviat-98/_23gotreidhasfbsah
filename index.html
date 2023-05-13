@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Choose accessible colors and learn which WCAG requirements your website meets with our easy-to-use contrast checker.">
+  <meta name="keywords" content="contrast checker, accessible colors, WCAG compliance">
+  <meta property="og:title" content="Peak Contrast Checker - Compare Colors for Accessibility and WCAG Compliance">
+  <meta property="og:description" content="Choose accessible colors and learn which WCAG requirements your website meets with our easy-to-use contrast checker.">
+  <meta property="og:image" content="Logo.svg">
+  <meta name="author" content="Sviatoslav Nytka and Anna Cherepantseva">
+  <meta name="application-name" content="Contrast Checker">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Contrast Checker: WCAG</title>
+  <link rel="icon" type="image/x-icon" href="Good.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <img src="logo.svg" alt="Peak Contrast Logo" />
+    <div>
+      <p>
+        Designed and developed by
+        <a
+          href="https://www.linkedin.com/in/anna-cherepantseva/"
+          target="_blank"
+          >Anna Cherepantseva</a
+        >
+        and
+        <a href="https://www.linkedin.com/in/sviatoslav-nytka/" target="_blank"
+          >Sviatoslav Nytka</a
+        >
+      </p>
+      <img class="heart" src="heart.svg" alt="" />
+    </div>
+  </header>
+
+  <section class="banner">
+    <img src="flag.svg" alt="Ukraine" />
+    <p>
+      We offer free access to this tool, but we kindly ask you to support
+      Ukraine. Please consider visiting
+      <a href="https://savelife.in.ua/en/" target="_blank">Come Back Alive.</a>
+    </p>
+  </section>
+
+  <section class="calculation">
+    <div class="calculation-input">
+      <div id="bars">
+        <div>
+          <h2>Foreground</h2>
+          <div>
+            <div class="color-box">
+              <input
+                class="color-preview"
+                type="color"
+                id="hex-foreground"
+                name="hex-foreground"
+                value="#000000"
+              />
+            </div>
+            <input
+              id="color-1-hex"
+              data-target="1"
+              type="text"
+              value="#000000"
+              maxlength="7"
+            />
+          </div>
+        </div>
+        <div>
+          <h2>Background</h2>
+
+          <div>
+            <div class="color-box">
+              <input
+                class="color-preview"
+                type="color"
+                id="hex-background"
+                name="hex-background"
+                value="#FFFFFF"
+              />
+            </div>
+            <input
+              id="color-2-hex"
+              data-target="2"
+              type="text"
+              value="#FFFFFF"
+              maxlength="7"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="contrast-result">
+      <div class="contrast-number">
+        <p>Contrast is:</p>
+        <span class="results-numbers">
+          <span id="contrast-value">21.0</span> : 1
+        </span>
+      </div>
+      <div>
+        <div class="character">
+          <img src="Good.svg" id="character-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="details" id="boxes">
+    <div class="card">
+      <div class="card-top">
+        <h2>Normal Text</h2>
+        <p>Less than 24 px regular/light (or less than 19 px semi-bold/bold)</p>
+      </div>
+      <div class="card-info">
+        <div class="card-row">
+          <div class="" id="aa-normal">AA</div>
+          <p class="card-col card-value">4.5:1</p>
+        </div>
+        <div class="card-row">
+          <div class="" id="aaa-normal">AAA</div>
+          <p class="card-col card-value">7:1</p>
+        </div>
+      </div>
+      <div id="sample">
+        <div
+          contenteditable="plaintext-only"
+          spellcheck="false"
+          id="sample-text"
+        >Change demo text</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <h2>Large Text</h2>
+        <p>At least 24 px regular/light (or at least 19 px semi-bold/bold)</p>
+      </div>
+
+      <div class="card-info">
+        <div class="card-row">
+          <div class="" id="aa-large">AA</div>
+          <p class="card-col card-value">3:1</p>
+        </div>
+        <div class="card-row">
+          <div class="" id="aaa-large">AAA</div>
+          <p class="card-col card-value">4.5:1</p>
+        </div>
+      </div>
+      <div id="sample2">
+        <div
+          contenteditable="plaintext-only"
+          spellcheck="false"
+          id="sample-text2"
+        >Change demo text</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <h2>Graphic Object</h2>
+        <p>Illustrations, icons, charts and other non-textual elements.</p>
+      </div>
+      <div class="card-info">
+        <div class="card-row">
+          <div class="" id="aa-graphic">AA</div>
+          <p class="card-col card-value">3:1</p>
+        </div>
+        <div class="card-row">
+          <div class="" id="aaa-graphic">AAA</div>
+          <p class="card-col card-value">3:1</p>
+        </div>
+      </div>
+      <div id="sample3">
+        <div id="sample-graphic1">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 48 48"
+            fill="#555"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              id="sample-graphic2"
+              d="M22.155 38.3342L24 40L25.845 38.3342C29.018 35.4193 31.6413 32.9047 33.7148 30.7906C35.7883 28.6764 37.44 26.7865 38.67 25.1207C39.9 23.455 40.7625 21.9468 41.2575 20.5962C41.7525 19.2456 42 17.8799 42 16.4993C42 13.7934 41.0925 11.5338 39.2775 9.72027C37.4625 7.90676 35.22 7 32.55 7C30.93 7 29.415 7.38267 28.005 8.14802C26.595 8.91337 25.26 10.1064 24 11.7271C22.92 10.1965 21.6525 9.02592 20.1975 8.21555C18.7425 7.40518 17.16 7 15.45 7C12.78 7 10.5375 7.90676 8.7225 9.72027C6.9075 11.5338 6 13.7934 6 16.4993C6 17.8799 6.2475 19.2456 6.7425 20.5962C7.2375 21.9468 8.1 23.455 9.33 25.1207C10.56 26.7865 12.2117 28.6764 14.2852 30.7906C16.3587 32.9047 18.982 35.4193 22.155 38.3342Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    <section id="color-contrast">        
+        <div id="boxes1">
+          <div id="aa-large">
+            <span>Large Text</span>
+            <span>WCAG AA</span>
+          </div>
+          <div id="aa-normal">
+            <span>Normal Text</span>
+            <span>WCAG AA</span>
+          </div>
+          <div id="aaa-large">
+            <span>Large Text</span>
+           <span>WCAG AAA</span>
+          </div>
+          <div id="aaa-normal">
+            <span>Normal Text</span>
+            <span>WCAG AAA</span>
+          </div>
+          <div id="aa-graphic">
+             <span>Graphic</span>
+            <span>WCAG AA</span>
+          </div>
+        </div>
+       
+      </section>
+      -->
+
+  <section class="all-bars">
+    <div class="bars-lines-rgb">
+      <div>
+        <label for="color-2-r" class="red">R</label>
+        <input id="color-2-r" type="range" min="0" max="255" value="255" />
+        <input id="number-2-r" type="number" min="0" max="255" value="255" />
+      </div>
+      <div>
+        <label for="color-2-g" class="green">G</label>
+        <input id="color-2-g" type="range" min="0" max="255" value="255" />
+        <input id="number-2-g" type="number" min="0" max="255" value="255" />
+      </div>
+      <div>
+        <label for="color-2-b" class="blue">B</label>
+        <input id="color-2-b" type="range" min="0" max="255" value="255" />
+        <input id="number-2-b" type="number" min="0" max="255" value="255" />
+      </div>
+    </div>
+
+    <div class="bars-lines-rgb">
+      <div>
+        <label for="color-1-r" class="red">R</label>
+        <input id="color-1-r" type="range" min="0" max="255" value="0" />
+        <input id="number-1-r" type="number" min="0" max="255" value="0" />
+      </div>
+      <div>
+        <label for="color-1-g" class="green">G</label>
+        <input id="color-1-g" type="range" min="0" max="255" value="0" />
+        <input id="number-1-g" type="number" min="0" max="255" value="0" />
+      </div>
+      <div>
+        <label for="color-1-b" class="blue">B</label>
+        <input id="color-1-b" type="range" min="0" max="255" value="0" />
+        <input id="number-1-b" type="number" min="0" max="255" value="0" />
+      </div>
+    </div>
+  </section>
+
+  <script src="functions.js"></script>
+</body>
