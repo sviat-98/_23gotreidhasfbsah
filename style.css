@@ -523,8 +523,33 @@ label.blue {
   }
 }
 
-@media (max-width: 600px) {
+
+
+@media (max-width: 520px) {
   header {
     padding: 0px 16px;
   }
+ .contrast-number .results-numbers,
+  #contrast-value {
+    font-size: 32px;
+  }
+  .contrast-number {
+    max-width: 160px;
+  }
+  .character img {
+    width: 100px;
+    height: 100px;
+  }
+  .surname{
+    display: none;
+  }
+
+    .calculation,
+  #boxes .card{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
+
+
+
